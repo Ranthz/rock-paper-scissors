@@ -59,20 +59,20 @@ dialog > :nth-child(3) {
 	border-radius: 4px;
 }
 
-#yes:hover,
-#no:hover {
+.yes:hover,
+.no:hover {
 	filter: brightness(0.8);
 }
-#yes:active,
-#no:active {
+.yes:active,
+.no:active {
 	filter: brightness(0.6);
 }
 
-#yes {
+.yes {
 	background-color: green;
 }
 
-#no {
+.no {
 	background-color: red;
 }
 
