@@ -12,6 +12,10 @@
 * {
 	margin: 0;
 }
+
+dialog {
+	margin: auto;
+}
 /*
   Typographic tweaks!
   3. Add accessible line-height
@@ -40,6 +44,7 @@ button,
 textarea,
 select {
 	font: inherit;
+	/* color: inherit; */
 }
 /*
   7. Avoid text overflows

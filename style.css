@@ -7,6 +7,73 @@
 body {
 	font-family: sans-serif;
 	line-height: 2;
+	color: white;
+	text-shadow: 0px 0px 50px #638253;
+	overflow: hidden;
+}
+
+dialog {
+	min-width: 466.083px;
+	min-height: 718.4px;
+	border-radius: 1em;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.8s;
+	color: black;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4em;
+	backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.419);
+}
+
+dialog[open] {
+	opacity: 1;
+	pointer-events: inherit;
+}
+
+dialog > :first-child {
+	padding-top: 3em;
+}
+dialog > :last-child {
+	margin-top: -50px;
+	padding-bottom: 150px;
+}
+dialog > :nth-child(3) {
+	margin-top: auto;
+}
+
+.playAgain {
+	display: flex;
+	gap: 20px;
+	width: 50%;
+}
+
+.playAgain button {
+	flex: 1;
+	padding: 5px 0;
+	color: white;
+	border: none;
+	border-radius: 4px;
+}
+
+#yes:hover,
+#no:hover {
+	filter: brightness(0.8);
+}
+#yes:active,
+#no:active {
+	filter: brightness(0.6);
+}
+
+#yes {
+	background-color: green;
+}
+
+#no {
+	background-color: red;
 }
 
 .container {
@@ -19,12 +86,13 @@ body {
 }
 
 .wrap {
-	background-color: white;
+	background: rgba(255, 255, 255, 0.18);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(16.6px);
+	-webkit-backdrop-filter: blur(16.6px);
+	border: 1px solid rgba(255, 255, 255, 0.33);
 	padding: 4em 4em;
-	border-radius: 1em;
-	border: 2px solid rgba(0, 0, 0, 0.16);
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -47,6 +115,7 @@ h3 {
 
 .choices button,
 #cpuChoiceEmoji {
+	background: white;
 	font-size: 2em;
 	padding: 0.1em 0.7em;
 	border-radius: 0.3em;
@@ -61,8 +130,12 @@ h3 {
 .choices button:hover {
 	background-color: white;
 	border: 3px solid rgb(57, 229, 134);
-	transform: scale(1.1);
+	transform: scale(1.2);
 	cursor: pointer;
+}
+.choices button:active {
+	box-shadow: inset 0 0 15px 0 #c7c7c7;
+	transform: scale(1);
 }
 
 .choices .active {
@@ -80,10 +153,16 @@ p {
 	font-size: 1.2em;
 }
 
-#result {
-	background-color: white;
-	font-size: 2em;
-	border: 3px solid skyblue;
-	border-radius: 0.4em;
+#thisRoundResult {
+	color: white;
+	min-width: 100%;
+	transition: 0.35s ease-in-out;
+	font-size: 1.4em;
 	padding: 0.3em 2em;
+	background: rgba(255, 255, 255, 0.18);
+	border-radius: 0.4em;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(16.6px);
+	-webkit-backdrop-filter: blur(16.6px);
+	border: 1px solid rgba(255, 255, 255, 0.33);
 }
